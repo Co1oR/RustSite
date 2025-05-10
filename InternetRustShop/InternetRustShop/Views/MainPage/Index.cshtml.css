@@ -1,0 +1,52 @@
+﻿
+.btn-purple {
+    background-color: #2c243c;
+    color: #6c6c77;
+    border: none;
+}
+
+.btn-purple:hover {
+    background-color: #3c3445;
+    color: #dbdade;
+}
+
+.btn-custom {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.product-card {
+    background-color: #1a1a2e;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+}
+
+.product-card .btn {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    border: none;
+}
+
+.product-card .btn:hover {
+    opacity: 0.9;
+}
+
+.product-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
