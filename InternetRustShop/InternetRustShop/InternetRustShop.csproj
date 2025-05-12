@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +17,11 @@
     <ProjectReference Include="..\ApplicationContextCore\ApplicationContextCore.csproj" />
     <ProjectReference Include="..\ApplicationDLL\ApplicationDLL.csproj" />
     <ProjectReference Include="..\ApplicationDomainCore\ApplicationDomainCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,12 @@
 ﻿using ApplicationDomain;
+using Authorize_Example_Custom_.Filters;
 using InternetRustShop.Models;
 using Microsoft.AspNetCore.Mvc;
 using UserBLL;
 
 namespace InternetRustShop.Controllers
 {
+    [ServiceFilter(typeof(MyAuthorizeFilter))]
     public class MainPageController : Controller
     {
         private readonly IUserService _userService;
