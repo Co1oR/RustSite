@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - InternetRustShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/InternetRustShop.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container-fluid p-0" style="min-height: 100vh; background-image: url('https://static.vecteezy.com/system/resources/previews/007/210/109/non_2x/abstract-background-modern-technology-banner-digital-backdrop-cover-graphic-template-wallpaper-free-photo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <header>
+            <nav class="navbar custom-navbar navbar-expand-sm navbar-toggleable-sm box-shadow" style="background: rgba(0, 0, 0, 0.5);">
+                <div class="row w-100">
+                    <div class="col-md-8 mx-auto">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-3">
+                                <a class="navbar-brand text-white fw-bold me-3" href="#">
+                                    CLEAN<span class="text-primary">RUST</span>
+                                </a>
+                                <a class="nav-link text-white rounded-pill nav-item-button" href="#">
+                                    <i class="bi bi-cart"></i> Shop
+                                </a>
+                                <a class="nav-link text-white rounded-pill nav-item-button" href="#">
+                                    <i class="bi bi-headset"></i> Support
+                                </a>
+                                <a class="nav-link text-white rounded-pill nav-item-button" href="#">
+                                    <i class="bi bi-book"></i> Правила
+                                </a>
+                                <a class="nav-link text-white rounded-pill nav-item-button" href="#">
+                                    <i class="bi bi-bag-plus"></i> Додати продукт
+                                </a>
+                                <a class="nav-link text-white rounded-pill nav-item-button" href="#">
+                                    <i class="bi bi-person-fill-add"></i> Додати адміністратора
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        @RenderBody()
+
+        <footer class="border-top footer text-muted" style="background: rgba(0, 0, 0, 0.5);">
+            <div class="container">
+                &copy; 2025 - InternetRustShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

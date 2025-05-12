@@ -1,6 +1,7 @@
 //using BinBLL;
 //using Microsoft.EntityFrameworkCore;
 //using ProductBLL;
+using Authorize_Example_Custom_.Filters;
 using BinBLL;
 using Microsoft.EntityFrameworkCore;
 using ProductBLL;
@@ -20,6 +21,7 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IBinService, BinService>();
+builder.Services.AddScoped<MyAuthorizeFilter>();
 
 var app = builder.Build();
 
@@ -37,8 +39,17 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=MainPage}/{action=Index}/{id?}"
+    );
+});
+
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=MainPage}/{action=Index}/{id?}");
+    pattern: "{controller=MainPage}/{action=Index}");
 
 app.Run();

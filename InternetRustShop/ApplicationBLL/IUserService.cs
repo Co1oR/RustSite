@@ -9,9 +9,11 @@ namespace UserBLL
 {
     public interface IUserService
     {
-        Task AddAsync(User user);
+        Task<bool> RegisterUser(User user);
+        Task<bool> LoginUser(User user);
         Task DeleteAsync(User user);
         Task<IEnumerable<User>> GetAllAsync();
+        Task<IEnumerable<User>> GetByConditionAsync(System.Linq.Expressions.Expression<System.Func<User, bool>> predicate);
         Task<User> GetByIdAsync(int id);
         Task UpdateAsync(User user, int id);
     }

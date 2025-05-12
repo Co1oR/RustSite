@@ -1,0 +1,44 @@
+﻿@model ApplicationDomain.User
+
+@{
+    Layout = "_AuthLayout";
+}
+
+
+
+<div class="container-fluid p-0" style="min-height: 100vh; background-image: url('https://static.vecteezy.com/system/resources/previews/007/210/109/non_2x/abstract-background-modern-technology-banner-digital-backdrop-cover-graphic-template-wallpaper-free-photo.jpg'); background-size: cover; background-position: center;">
+    <main class="d-flex justify-content-center align-items-center" style="min-height: 100vh; background-color: rgba(0, 0, 0, 0.7);">
+        <div class="col-11 col-sm-8 col-md-5 col-lg-4">
+            <div class="card text-white p-4 border-0 rounded-4 shadow" style="background-color: #121225;">
+                <h2 class="text-center mb-4">Реєстрація</h2>
+
+                <form asp-action="Register" method="post" class="d-flex flex-column gap-3">
+                    <div class="form-group">
+                        <label asp-for="Name" class="form-label">Нікнейм</label>
+                        <input asp-for="Name" class="form-control bg-dark text-white border-0 rounded-3 px-3 py-2" placeholder="Введіть нікнейм" />
+                        <span asp-validation-for="Name" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Email" class="form-label">Email</label>
+                        <input asp-for="Email" class="form-control bg-dark text-white border-0 rounded-3 px-3 py-2" placeholder="Введіть email" />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Password" class="form-label">Пароль</label>
+                        <input asp-for="Password" type="password" class="form-control bg-dark text-white border-0 rounded-3 px-3 py-2" placeholder="Введіть пароль" />
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-success rounded-pill py-2 fw-bold">Зареєструватись</button>
+                </form>
+
+                <div class="text-center mt-3">
+                    <small class="text-muted">Вже маєш акаунт?</small><br />
+                    <a href="/Authentificate/Login" class="text-info text-decoration-none">Увійти</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

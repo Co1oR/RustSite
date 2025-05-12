@@ -17,6 +17,22 @@ namespace UserDLL
             _applicationContext = applicationContext;
         }
 
+        public async Task<bool> ValidateUser(string name, string password)
+        {
+            var user = await _applicationContext.Users
+                .FirstOrDefaultAsync(u => u.Name == name && u.Password == password);
+            if (user == null) { return true; }
+            else { return false; }
+        }
+
+        public async Task<bool> CheckIfNameAvalible(string name)
+        {
+            var user = await _applicationContext.Users
+                .FirstOrDefaultAsync(u => u.Name == name);
+            if (user == null) { return true; }
+            else { return false; }
+        }
+
         public async Task AddAsync(User entity)
         {
             await _applicationContext.Users.AddAsync(entity);
